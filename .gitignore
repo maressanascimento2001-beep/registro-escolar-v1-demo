@@ -1,5 +1,25 @@
-app/
+# Secrets and local configuration
 .env
 .env.local
+.env.*
+!.env.example
+*.env
+*.key
+*.pem
+*.p12
+*.pfx
+*.crt
+
+# Dependencies and build output
 node_modules/
+app/
+.next/
+out/
+dist/
+
+# Temporary and generated files
 *.log
+tmp/
+temp/
+uploads/
+coverage/
