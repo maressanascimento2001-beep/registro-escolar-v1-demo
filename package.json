@@ -1,0 +1,9 @@
+{
+  "name": "registro-escolar-render-wrapper",
+  "private": true,
+  "scripts": {
+    "build": "node deploy.mjs && npm install --prefix app && npm run build --prefix app",
+    "start": "npm run start --prefix app",
+    "db:deploy": "cd app && npx prisma migrate deploy"
+  }
+}

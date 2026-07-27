@@ -1,0 +1,28 @@
+services:
+  - type: web
+    name: registro-escolar-v1-demo
+    runtime: node
+    plan: free
+    buildCommand: npm run build
+    preDeployCommand: npm run db:deploy
+    startCommand: npm run start
+    healthCheckPath: /login
+    autoDeployTrigger: commit
+    envVars:
+      - key: DATABASE_URL
+        fromDatabase:
+          name: registro-escolar-v1-postgres
+          property: connectionString
+      - key: NEXTAUTH_SECRET
+        generateValue: true
+      - key: DEMO_PROFESSOR_EMAIL
+        sync: false
+      - key: DEMO_PROFESSOR_PASSWORD
+        sync: false
+      - key: NEXTAUTH_URL
+        sync: false
+
+databases:
+  - name: registro-escolar-v1-postgres
+    plan: free
+    postgresMajorVersion: "17"
