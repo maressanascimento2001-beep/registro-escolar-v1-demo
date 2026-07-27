@@ -9,6 +9,10 @@
 *.p12
 *.pfx
 *.crt
+*.secret
+*.credentials
+.credentials/
+secrets/
 
 # Dependencies and build output
 node_modules/
