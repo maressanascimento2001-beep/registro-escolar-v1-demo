@@ -6,6 +6,6 @@ const appDirectory = "app";
 if (existsSync(appDirectory)) rmSync(appDirectory, { recursive: true, force: true });
 mkdirSync(appDirectory, { recursive: true });
 
-execFileSync("tar", ["-xzf", "app.tar.gz", "-C", appDirectory, "--strip-components=1"], {
+execFileSync("tar", ["-xzf", "app-v2.tar.gz", "-C", appDirectory, "--strip-components=1"], {
   stdio: "inherit",
 });
